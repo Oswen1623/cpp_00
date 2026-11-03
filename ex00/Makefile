@@ -1,30 +1,22 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/11/02 23:03:37 by lucinguy          #+#    #+#              #
-#    Updated: 2026/11/03 00:41:11 by lucinguy         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		:= megaphone
 C++			:= c++
 C++FLAGS	:= -Wall -Wextra -Werror -std=c++98
 RM			:= rm -f
 
 SRCS		:= megaphone.cpp
+OBJS		:= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(C++) $(C++FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(C++) $(C++FLAGS) $(OBJS) -o $(NAME)
 	@echo "✓ $(NAME) compiled successfully!"
 
+%.o: %.cpp
+	$(C++) $(C++FLAGS) -c $< -o $@
+
 clean:
-	@:
+	$(RM) $(OBJS)
 fclean: clean
 	$(RM) $(NAME)
 
