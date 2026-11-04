@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <unistd.h>
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
