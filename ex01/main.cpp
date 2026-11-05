@@ -29,7 +29,7 @@ int main()
 			std::cout << "Bye, have an awful day!" << std::endl;
 			break;
 		}
-		// system("clear");
+		system("clear");
 	}
 	// sleep(1);
 	return 0;

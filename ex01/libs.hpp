@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <iomanip>
+#include <cstdio>
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
