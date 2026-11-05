@@ -54,11 +54,26 @@ void PhoneBook::add_contact()
 		this->add_contact();
 	else if (buffer == "yes" || buffer == "Yes" || buffer == "YES")
 		std::cout << "Saving..." << std::endl ;
-	sleep(2);
+	sleep(1);
 	this->contact_idx++;
 	this->contact_nb++;
 }
 void PhoneBook::search_contact()
 {
-
+	if (this->contact_nb == 0){
+		std::cout << "No contact avalaible ! Abort..." << std::endl; sleep(1); return;
+	}
+	std::cout << std::setw(5) << "Index" << "|";
+	std::cout << std::setw(10) << "Firstname" << "|";
+	std::cout << std::setw(10) << "Lastname" << "|";
+	std::cout << std::setw(10) << "Nickname" << std::endl;
+	for (int i = 1; i <= contact_idx ; i++)
+	{
+		std::cout << std::setw(5) << i << "|";
+		std::cout << std::setw(10) << this->id[i - 1].getFirstName().substr(0, 9) << "|";
+		std::cout << std::setw(10) << this->id[i - 1].getLastName().substr(0, 9) << "|";
+		std::cout << std::setw(10) << this->id[i - 1].getNickName().substr(0, 9) << std::endl;
+	}
+	// sleep(1);
+	return;
 }

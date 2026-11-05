@@ -16,15 +16,15 @@ int main()
 			exit(1);
 
 		//Add
-		if (!input.compare("ADD") || !input.compare("add"))
+		if (!input.compare("ADD") || !input.compare("add") || !input.compare("Add"))
 			PhoneBook.add_contact();
 
 		//Search
-		else if (!input.compare("SEARCH") || !input.compare("search"))
+		else if (!input.compare("SEARCH") || !input.compare("search") || !input.compare("Search"))
 			PhoneBook.search_contact();
 
 		//Exit
-		else if (!input.compare("EXIT") || !input.compare("exit"))
+		else if (!input.compare("EXIT") || !input.compare("exit") || !input.compare("Exit"))
 		{
 			std::cout << "Bye, have an awful day!" << std::endl;
 			break;
